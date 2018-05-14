@@ -29,7 +29,7 @@ public class Produto implements Serializable{
 	private Double preco;
 	
 	@JsonIgnore
-	@ManyToMany
+	@ManyToMany 
 	@JoinTable(name="produto_categoria", 
 		joinColumns= @JoinColumn(name="produto_id"),
 		inverseJoinColumns=@JoinColumn(name="categoria_id"))

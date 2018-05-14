@@ -2,230 +2,307 @@
 
 Curso Spring Boot, Hibernate, REST, Ionic - Udemy
 
-Aula(1-3). Introduçao e Como o curso esta organizado.
+- Introdução (Capítulo 1)
 
-Aula4. Apresentaçao do estudo de caso: Um sistema de Pedido de Produto. 
+	Aula(1-3). Introduçao e Como o curso esta organizado.
 
-Aula5. Material de apoio: Uso do aplicativo Asta para gerar os diagramas de modelagem.
+- Implementação do modelo conceitual (Capítulo 2)
 
-Aula6. Instalaçao das ferramentas:
+	Aula 4. Apresentaçao do estudo de caso: Um sistema de Pedido de Produto. 
 
-	* Git - Conta no Github user:lincolnjohn@gmail.com password:marte1964
+	Aula 5. Material de apoio: Uso do aplicativo Asta para gerar os diagramas de modelagem.
 
-	* Google Chrome e Postman (Rest Client - utilizar extensao RESTClient no FireFox)
+	Aula 6. Instalaçao das ferramentas:
 
-	* JDK - Java Development Kit
+		* Git - Conta no Github user:lincolnjohn@gmail.com password:marte1964
 
-	* STS - Spring Tool Suit (Eclipse / Maven / Tomcat / Jackson / JPA)
+		* Google Chrome e Postman (Rest Client - utilizar extensao RESTClient no FireFox)
 
-	* Git instalado local $>git --version git version 2.14.1
-	
-Aula7. Nivelamento sobre JPA 1:
-	* Mapeamento de objeto-relacional: Uma ponte entre o paradigma objeto e o relacional.
+		* JDK - Java Development Kit
 
-	* JPA (java persistence api)é a especificação padrão da plataforma JavaEE (javax.persistence)
-	para mapeamento objeto-relacional e persistência de dados.
+		* STS - Spring Tool Suit (Eclipse / Maven / Tomcat / Jackson / JPA)
 
-	* Para trabalhar com JPA é necessário incluir uma implementação da API (hibernate).
-
-	* As principais classes são EntityManager que encapsula uma conexão com a base de dados
-	e serve para realizar operações de acesso a dados (incluir, consultar, deletar e alterar)
-	em entidades por ela monitoradas em um mesmo contexto de persistência. EntityManagerFactory
-	instanciar objetos EntityManager.
-
-Aula8. Nivelamento sobre JPA 2:
-	* Incluir os Mapeamentos da classe de dominio. Utilizando anotação "@Entity".
-	
-	* O JPA somente manipula objetos que estão monitoradas, significa que o objeto acabou de ser incluido
-	ou foi buscado do banco de dados.
-
-	* Sempre que você for realizar uma operação que não seja uma consulta, tem que ser envolvida por uma
-	transação.
-
--------------------------------------->>> 02/05/2018 
-
-Aula9. Criando o Projeto com Spring Boot:
-	* O Spring Boot já vem com o Tomcat embutido.
-
-	* O arquvio application.properties pode ser usado para mudar a porta padrão do tomcat:
-		- server.port=${port:8081}
-
-Aula10. Primeiro commit do Projeto:
-	* Utilizar o repositório do github.
-
-	* Abrir a worspace do projeto pelo terminal.
-
-	* Iniciar o git $>git init , o git cria uma pasta chamada .git, onde vai armazenar as informações de mudanças e atualização
-	das versões do projeto.
-
-	* A pasta criada pelo git fica oculta para visualizar no terminal $>ls -a -lh, no gerenciador de arquivo Crtl+H.
-
-	* Configurar o git:
-		- Na pasta do projeto, via terminal:
-			* $>git config --global user.name "Lincoln John".
-			* $>git config --global user.email "lincolnjohn@gmail.com"
-			* $>git status (visualiza os arquivos que não estão rastreados pelo git (monitorados - Untracked files)).
-			* $>git add . (adiciona todos arquivos para área do track, onde podem ser monitorados).
-			* $>git commit -m "Projeto criado" (prepara os arquivos para serem versionados no github, -m "mensagem").
-			* $>git log (visualiza o log criado com commit).
-			* Na página do github selecionar opção "Start project".
-			* $>git remote add origin https://github.com/lincolnjohn/cursomc.git (associar o projeto do github com o repositorio local).
-			* $>git push -u origin master (envio do repositorio local para o github-repositorio web).
-			* Solicita usuario:lincolnjohn e senha:marte1964.
-			* No github o projeto já fica salvo, onde se visualiza o commit realizado.
-
->>> Parou
-
--------------------------------------->>> 03/05/2018 
-Aula11. Testando o Projeto com REST:
-	
-	* Criar a classe CategoriaResource no pacote \resources vai ser uma classe de Controller.
-
-	* Esta classe vai ser controladora REST (com anotação @RestController) e vai ser mapeada com os 
-	End Points (com anotação @RequestMapping).
-	
-	* Foi feito o versionamento usando git:
-		- git status
-		- git add .
-		- git commit -m "mensagem"
-		- git push
-
-Aula 12. Testando a primeira classe de dominio "Categoria":
-	
-	* Métodos hashCode e equals permitem comprar objetos da classe pelo seu conteúdo.
-	
-	* Testar a classe "Categoria" utilizando REST cliente "Advanced REST Client - v12.1.2".
-
-	* Para visulizar um log resumido $>git log --oneline.
-
--------------------------------------->>> 04/05/2018 
-Aula 13. Banco de dados H2 e criação automática da base de dados:
-	
-	* Incluir no projeto as dependências do Spring-Boot JPA, Banco de dados H2(banco que roda em memória) e Spring-Boot devtools.
-	
-	* Para chamar o console do H2 executar o projeto e informar a url http:\\localhost:8080\h2-console.
-
-	* Para converte os objetos em tabelas, usar as anotação do Jpa @Entity, @Id e @GeneratedValue.
-
-Aula 14. Criando a classe repository e service para Categoria:
-
-	* Atualizar o código da classe service para a versão 2 do Spring Boot(so trabalhar com java8 em diante):
-		- Categoria obj = repo.findOne(id); --> Optional<Categoria> obj = repo.findById(id);
-			return obj;								return obj.orElse(null);
-	
-	* Optional<obj>  encapsula objeto e trata no caso de nulo.
-
-	* Modelo arquitetural:
-
-		- Aplicação <--> [Controladores REST (Resources)] <-->	[Camada de Serviço] 					[Camada de domínio]
-																[Camada de acesso a dados (Repository)]	[Camada de domínio]
-	* Utilizar anotação @Autowired para injetar uma classe.
-
-	* Testando com REST client.
-
-	* Fazer o versionamento no github.
-
-Aula 15. Criando operação de instanciação:
-	
-	* Atualização (Spring Boot 2):
-		- categoriaRepository.save(Arrays.asList(cat1, cat2)); --> categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
-
-	* Implementando CommandLineRunner, para quando aplicação iniciar ela instância o banco de dados.
-
-Aula 16. Criação da classe Produto e associação muitos para muitos:
-	
-	* Entre as entidades Produto e Categoria existe uma relacionamento Muitos para Muitos (anotaçaõ @ManyToMany).
-
-	* Utilizando anotação @JoinTable identifico qual a tabela que vai conter o relacionamento entre Produto e Categoria.
-	Usando os atributos:
-		- joinColumns= @JoinColumn(name="produto_id") e inverseJoinColumns=@JoinColumn(name="categoria_id")), aponto
-		os campos primários das duas tabelas que fazem parte tabela de relacionamento.
-
-Aula 17. Ajuste no endPoint/categorias{id}:
-
-	* Atualização (Spring Boot 2):
-		- public Categoria find(Integer id){
-			Categoria obj = repo.findOne(id);
-			if (obj == null){.....}
-		}  
-
-		-->  
-
-		public Categoria buscar(Integer id) throws ObjectNotFoundException {
+		* Git instalado local $>git --version git version 2.14.1
 		
-		Optional<Categoria> obj = repo.findById(id);
+	Aula 7. Nivelamento sobre JPA - Parte 1:
+		* Mapeamento de objeto-relacional: Uma ponte entre o paradigma objeto e o relacional.
+
+		* JPA (java persistence api)é a especificação padrão da plataforma JavaEE (javax.persistence)
+		para mapeamento objeto-relacional e persistência de dados.
+
+		* Para trabalhar com JPA é necessário incluir uma implementação da API (hibernate).
+
+		* As principais classes são EntityManager que encapsula uma conexão com a base de dados
+		e serve para realizar operações de acesso a dados (incluir, consultar, deletar e alterar)
+		em entidades por ela monitoradas em um mesmo contexto de persistência. EntityManagerFactory
+		instanciar objetos EntityManager.
+
+	Aula 8. Nivelamento sobre JPA - Parte 2:
+		* Incluir os Mapeamentos da classe de dominio. Utilizando anotação "@Entity".
 		
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+id+", Tipo: "+Categoria.class.getName()));
-	}
+		* O JPA somente manipula objetos que estão monitoradas, significa que o objeto acabou de ser incluido
+		ou foi buscado do banco de dados.
 
-	* Utilizar anotação @JsonManagedReference, que permite gerenciar referências ciclicas. Na entidade que se quer 
-	visualizar a referência. Na outra entidade usar anotação @JsonBackReference, informando que já foi feita a referência
-	na outra entidade. 	
+		* Sempre que você for realizar uma operação que não seja uma consulta, tem que ser envolvida por uma
+		transação.
 
-	* Realizar um tratamento de exceção para o REST, no caso de buscar um recurso não encontrado.
+------------------------------------------>>> 02/05/2018 
 
-	* Cria classes para tratamento de exceção ObjectNotFoundException na camada de services, criar um controlador
-	que captura as exceções do HttpServletRequest e uma classe que define um padrão de erro StandardError.
+	Aula 9. Criando o Projeto com Spring Boot:
+		* O Spring Boot já vem com o Tomcat embutido.
 
--------------------------------------->>> 05/05/2018 
+		* O arquvio application.properties pode ser usado para mudar a porta padrão do tomcat:
+			- server.port=${port:8081}
 
-Endereço do github https://github.com/acenelio/springboot2-ionic-backend
- 
-Aula 18. Estado e Cidade:
-	
-	* Utilizar a anotação de mapaeamento @ManyToOne (cidade -> estado) e 
-	@OneToMany (relacionamento estado -> cidades).
+	Aula 10. Primeiro commit do Projeto:
+		* Utilizar o repositório do github.
 
-	* Salvar primeiro os Estados.
+		* Abrir a worspace do projeto pelo terminal.
 
-	* Realizar o versionamento no github.
+		* Iniciar o git $>git init , o git cria uma pasta chamada .git, onde vai armazenar as informações de mudanças e atualização
+		das versões do projeto.
 
-Aula 19. Implementar as classes Cliente, Tipo Cliente, telefones e endereço - Parte1:
-	
-	* Criar um Enum (um tipo enumerado de uma classe) Tipo Cliente.
+		* A pasta criada pelo git fica oculta para visualizar no terminal $>ls -a -lh, no gerenciador de arquivo Crtl+H.
 
-	* Criar o telefone como uma coleção de string da classe Cliente.
+		* Configurar o git:
+			- Na pasta do projeto, via terminal:
+				* $>git config --global user.name "Lincoln John".
+				* $>git config --global user.email "lincolnjohn@gmail.com"
+				* $>git status (visualiza os arquivos que não estão rastreados pelo git (monitorados - Untracked files)).
+				* $>git add . (adiciona todos arquivos para área do track, onde podem ser monitorados).
+				* $>git commit -m "Projeto criado" (prepara os arquivos para serem versionados no github, -m "mensagem").
+				* $>git log (visualiza o log criado com commit).
+				* Na página do github selecionar opção "Start project".
+				* $>git remote add origin https://github.com/lincolnjohn/cursomc.git (associar o projeto do github com o 
+				repositorio local).
+				* $>git push -u origin master (envio do repositorio local para o github-repositorio web).
+				* Solicita usuario:lincolnjohn e senha:marte1964.
+				* No github o projeto já fica salvo, onde se visualiza o commit realizado.
 
-	* Utilizar o tipo de coleção Set<>, que não permite repetição.
+	>>> Parou
 
--------------------------------------->>> 06/05/2018 
+------------------------------------------>>> 03/05/2018 
+	Aula 11. Testando o Projeto com REST:
+		
+		* Criar a classe CategoriaResource no pacote \resources vai ser uma classe de Controller.
 
-Aula 20. Implementar as classes Cliente, Tipo Cliente, telefones e endereço - Parte2:
-	
-	* Mapeamento orm paras as classes.
+		* Esta classe vai ser controladora REST (com anotação @RestController) e vai ser mapeada com os 
+		End Points (com anotação @RequestMapping).
+		
+		* Foi feito o versionamento usando git:
+			- git status
+			- git add .
+			- git commit -m "mensagem"
+			- git push
 
-	* A classe Endereco esta associada com Cidade e Cliente, em um relacionamento Muitos para Um.
-	O mapeamento do lado Endereco é representado pela anotação @ManyToOne e @JoinColumn(name="cliente_id")
-	para Cliente, @ManyToOne @JoinColumn(name="cidade_id") para Cidade. O mapeamento do lado Cliente é
-	representado pela anotação @OneToMany(mappedBy="cliente").
+	Aula 12. Testando a primeira classe de dominio "Categoria":
+		
+		* Métodos hashCode e equals permitem comprar objetos da classe pelo seu conteúdo.
+		
+		* Testar a classe "Categoria" utilizando REST cliente "Advanced REST Client - v12.1.2".
 
-	* O mapeamento do telefone (entidade fraca) em relação ao Cliente é feito pela anotação
-	@ElementCollection @CollectionTable(name="telefone"). O telefone foi definido como uma coleção de 
-	String.
+		* Para visulizar um log resumido $>git log --oneline.
 
-	* Instanciar a classe Cliente primeiro, para povoar o banco de dados. Salvar primeiro a entidade
-	que independe de outra.
+------------------------------------------>>> 04/05/2018 
 
-Aula 21. Endpoint/clientes/{id} disponível:
-	
-	* Criar a classe ClienteService.
+	Aula 13. Banco de dados H2 e criação automática da base de dados:
+		
+		* Incluir no projeto as dependências do Spring-Boot JPA, Banco de dados H2(banco que roda em memória) e Spring-Boot
+		devtools.
+		
+		* Para chamar o console do H2 executar o projeto e informar a url http:\\localhost:8080\h2-console.
 
-	* Criar a classe ClienteResource.
+		* Para converte os objetos em tabelas, usar as anotação do Jpa @Entity, @Id e @GeneratedValue.
 
-	* Em relação a serialização ciclica um cliente pode serializar um endereço, mas um endereços não
-	pode serializar um cliente.
+	Aula 14. Criando a classe repository e service para Categoria:
 
-	* Utilizar anotação @JsonManagedReference na classe Cliente referente ao enderecos:
-		- 	@JsonManagedReference
-			@OneToMany(mappedBy="cliente")
-			private List<Endereco> enderecos = new ArrayList<>();
+		* Atualizar o código da classe service para a versão 2 do Spring Boot(so trabalhar com java8 em diante):
+			- Categoria obj = repo.findOne(id); --> Optional<Categoria> obj = repo.findById(id);
+				return obj;								return obj.orElse(null);
+		
+		* Optional<obj>  encapsula objeto e trata no caso de nulo.
 
-	* Na classe Endereço uso anotação @JsonBackReference, sinalizando que a classe Endereço não pode
-	serializar a classe Cliente. Esse processo ocorre também entre as classes Cidade e Estado, realizar
-	o mesmo tratamento.
-	
+		* Modelo arquitetural:
 
+			- Aplicação <--> [Controladores REST (Resources)] <-->	[Camada de Serviço] 					[Camada de domínio]
+																	[Camada de acesso a dados (Repository)]	[Camada de domínio]
+		* Utilizar anotação @Autowired para injetar uma classe.
 
+		* Testando com REST client.
+
+		* Fazer o versionamento no github.
+
+	Aula 15. Criando operação de instanciação:
+		
+		* Atualização (Spring Boot 2):
+			- categoriaRepository.save(Arrays.asList(cat1, cat2)); --> categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+
+		* Implementando CommandLineRunner, para quando aplicação iniciar ela instância o banco de dados.
+
+	Aula 16. Criação da classe Produto e associação muitos para muitos:
+		
+		* Entre as entidades Produto e Categoria existe uma relacionamento Muitos para Muitos (anotaçaõ @ManyToMany).
+
+		* Utilizando anotação @JoinTable identifico qual a tabela que vai conter o relacionamento entre Produto e Categoria.
+		Usando os atributos:
+			- joinColumns= @JoinColumn(name="produto_id") e inverseJoinColumns=@JoinColumn(name="categoria_id")), aponto
+			os campos primários das duas tabelas que fazem parte tabela de relacionamento.
+
+	Aula 17. Ajuste no endPoint/categorias{id}:
+
+		* Atualização (Spring Boot 2):
+			- public Categoria find(Integer id){
+				Categoria obj = repo.findOne(id);
+				if (obj == null){.....}
+			}  
+
+			-->  
+
+			public Categoria buscar(Integer id) throws ObjectNotFoundException {
+			
+			Optional<Categoria> obj = repo.findById(id);
+			
+			return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+id+", Tipo: 
+			"+Categoria.class.getName()));
+		}
+
+		* Utilizar anotação @JsonManagedReference, que permite gerenciar referências ciclicas. Na entidade que se quer 
+		visualizar a referência. Na outra entidade usar anotação @JsonBackReference, informando que já foi feita a referência
+		na outra entidade. 	
+
+		* Realizar um tratamento de exceção para o REST, no caso de buscar um recurso não encontrado.
+
+		* Cria classes para tratamento de exceção ObjectNotFoundException na camada de services, criar um controlador
+		que captura as exceções do HttpServletRequest e uma classe que define um padrão de erro StandardError.
+
+	 
+	Aula 18. Estado e Cidade:
+		
+		* Utilizar a anotação de mapaeamento @ManyToOne (cidade -> estado) e 
+		@OneToMany (relacionamento estado -> cidades).
+
+		* Salvar primeiro os Estados.
+
+		* Realizar o versionamento no github.
+
+	Aula 19. Implementar as classes Cliente, Tipo Cliente, telefones e endereço - Parte1:
+		
+		* Criar um Enum (um tipo enumerado de uma classe) Tipo Cliente.
+
+		* Criar o telefone como uma coleção de string da classe Cliente.
+
+		* Utilizar o tipo de coleção Set<>, que não permite repetição.
+
+------------------------------------------->>> 06/05/2018 
+
+	Aula 20. Implementar as classes Cliente, Tipo Cliente, telefones e endereço - Parte2:
+		
+		* Mapeamento orm paras as classes.
+
+		* A classe Endereco esta associada com Cidade e Cliente, em um relacionamento Muitos para Um.
+		O mapeamento do lado Endereco é representado pela anotação @ManyToOne e @JoinColumn(name="cliente_id")
+		para Cliente, @ManyToOne @JoinColumn(name="cidade_id") para Cidade. O mapeamento do lado Cliente é
+		representado pela anotação @OneToMany(mappedBy="cliente").
+
+		* O mapeamento do telefone (entidade fraca) em relação ao Cliente é feito pela anotação
+		@ElementCollection @CollectionTable(name="telefone"). O telefone foi definido como uma coleção de 
+		String.
+
+		* Instanciar a classe Cliente primeiro, para povoar o banco de dados. Salvar primeiro a entidade
+		que independe de outra.
+
+	Aula 21. Endpoint/clientes/{id} disponível:
+		
+		* Criar a classe ClienteService.
+
+		* Criar a classe ClienteResource.
+
+		* Em relação a serialização ciclica um cliente pode serializar um endereço, mas um endereços não
+		pode serializar um cliente.
+
+		* Utilizar anotação @JsonManagedReference na classe Cliente referente ao enderecos:
+			- 	@JsonManagedReference
+				@OneToMany(mappedBy="cliente")
+				private List<Endereco> enderecos = new ArrayList<>();
+
+		* Na classe Endereço uso anotação @JsonBackReference, sinalizando que a classe Endereço não pode
+		serializar a classe Cliente. Esse processo ocorre também entre as classes Cidade e Estado, realizar
+		o mesmo tratamento.
+
+------------------------------------------->>> 09/05/2018 
+
+	Aula 22. Pedio,EstadoPagamento e Pagamento - Parte1:
+
+		* Coreção ->  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+
+		* A classe Pedido é uni-direcionada com a classe Endereco, então endereco não precisa conhecer o pedido.
+
+		* A classe Pedido é bi-direcionada com a classe Cliente, então ambos precisam se conhecer.
+
+		* Lembrando coleção não se coloca no construtor.
+
+	Aula 23. Pedio,EstadoPagamento e Pagamento - Parte2:
+
+		* Mapeamento Objeto relacional.
+
+		* O mapeamento Pagamento com Pedido vai ser representado pela notação @OneToOne(um para um bi-direcional), para garantir 
+		que o id do Pagamento seja o mesmo da coluna pedido_id utilizamos anotação @MapsId. O id do pagamento não vai utilizar 
+		anotação @GeneratedValue.
+
+		* O mapeamento do Pedido com Pagamento vai ser utilizado anotação @OneToOne(um para um bi-direcional) e o atributo 
+		cascade=CascadeType.ALL, para garantir que uma transação ao ser realizada no pedido se reflita no pagamento. 
+
+	Aula 24. Pedio,EstadoPagamento e Pagamento - Parte3:
+
+		* Mapeamento da herança entre Pagamento,PagamentoComBoleto e PagamentoComCartao.
+
+		* Utiliza-se duas abordagens uma tabela única com as duas sub-classes (mais performace) ou uma tabela para cada sub-classe.
+		Caso as sub-classes tenham muitos atributos o melhor é uma tabela para cada, se houver poucos atributos a solução é uma
+		tabela única.
+
+		* Anotação utilizada para cada sub-classe com uma tabela é @Inheritance(strategy=InheritanceType.JOINED).
+
+		* Identificar a super-classe Pagamento como abstrata, onde so posso instanciar as sub-classses.
+		
+------------------------------------------>>> 10/05/2018 
+	Aula 25. Item Pedio e ItemPrdidoPK - Parte1:
+		
+		* Uma classe de associação não tem um identificador próprio, quem identifica esta é as classes que ela é associada.
+
+		* Uma das maneiras de mapear a classe associada (java com JPA) é criar uma chave composta a partir das classes que geram
+		associação.
+
+		* Criar uma classe auxiliar que contém a chave composta.
+
+		* Utilizar anotação @Embeddable, para identificar com subtipo.
+
+	Aula 26. Item Pedio e ItemPrdidoPK - Parte2:
+		* Para a classe Pedido conheça a classe ItemPedido, tenho que definir dentra da classe Pedido uma coleção de ItemPedido.
+		Este processo se repete com a classe Produto.
+
+		* Utilizar anotação @EmbeddedId para identificar um id embutido em uma classe auxiliar.
+
+	Aula 27. Endpoint/pedidos/{id} disponibilizado:
+		
+		* Na classe ItemPedido que tem uma chave composta vou utilizar anotação @JsonIgnore, identificando que a classe não
+		vai ser serializada.
+
+	Aula 28. Atualização utilizando somente @Jsonignore:
+
+		* Utilizar somente @Jsonignore no lugar @JsonBackReference, apagar @JsonManagerReference.
+
+- Operaçẽos de CRUD e Casos de Uso (Capítulo 3)
+
+	Aula 29. Material de Apoio:
+
+		* Vamos ver muita coisa bacana neste capítulo, desde os controladores REST, uso de DTO's, validações personalizadas, 
+		tratamento de exceções e consultas à base de dados. Sempre de olho nas boas práticas de Engenharia de Software.
+
+		* A partir da próxima aula vamos definir o repositório Github oficinal do projeto do curso na versão 1.5.x do Spring Boot:
+		https://github.com/acenelio/spring-boot-ionic-backend
+
+		* Além disso, o projeto foi TOTALMENTE REFEITO para a nova versão 2.x.x do Spring Boot, o qual também está disponível no
+		Github:	https://github.com/acenelio/springboot2-ionic-backend
 
 -------------------------------------->>> 13/05/2018 
 
@@ -250,6 +327,17 @@ Aula 32. Atualizando Categoria com PUT:
 	
 	* Utilizando o método PUT para atualizar a Categoria.
 
+-------------------------------------->>> 14/05/2018  
+
+Aula 33. Deletando uma Categoria com DELETE:
+
+	* Atualização para Srping Boot 2.x, na classe CategoriaService usar "repo.deleteById(id)" .
+
+	* Se tentar deletar Categoria que tenha Produto relacionado, no exemplo utilizado vou abortar operação
+	de deletar. Ao tentar deletar o spring Data lança uma exeção de "Integridade Violada".
+
+	* Capturar a exeção para lançar uma controlada, pela camada de Serviço. Uma exeção adequada a uma solicitação 
+	HttpServletRequest.
 
 
 
@@ -258,4 +346,3 @@ Aula 32. Atualizando Categoria com PUT:
 
 
 
- 

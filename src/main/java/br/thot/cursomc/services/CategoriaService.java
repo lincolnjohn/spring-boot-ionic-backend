@@ -3,10 +3,12 @@ package br.thot.cursomc.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import br.thot.cursomc.domain.Categoria;
 import br.thot.cursomc.repositories.CategoriaRepository;
+import br.thot.cursomc.services.exceptions.DataIntegrityException;
 import br.thot.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
@@ -33,6 +35,20 @@ public class CategoriaService {
 	public Categoria update(Categoria obj) {
 		find(obj.getId());
 		return repo.save(obj);
+	}
+
+	public void delete(Integer id) {
+		find(id);
+		try {
+			
+			repo.deleteById(id);
+			
+		} catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos");
+		}
+		
+		
+		
 	}
 
 }
