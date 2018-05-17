@@ -339,6 +339,17 @@ Aula 33. Deletando uma Categoria com DELETE:
 	* Capturar a exeção para lançar uma controlada, pela camada de Serviço. Uma exeção adequada a uma solicitação 
 	HttpServletRequest.
 
+-------------------------------------->>> 17/05/2018  
+
+Aula 34 - Listando todas as categorias com DTO:
+
+	* Criar um End-point que retorna todas as categorias.
+
+	* Para listar apenas as Categorias sem mostrar os produtos utilizar o padrão DTO (Data Transfer Object), objeto que tem
+	apenas os dados que eu quero selecionar.
+
+	* Para converter uma lista de Categoria em uma lista de CategoriaDTO, utilizar o método do Java 8 stream.map() em conjunto
+	com uma arrow function ( -> ).
 
 
 
