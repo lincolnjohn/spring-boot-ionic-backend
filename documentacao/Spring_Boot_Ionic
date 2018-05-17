@@ -341,7 +341,7 @@ Aula 33. Deletando uma Categoria com DELETE:
 
 -------------------------------------->>> 17/05/2018  
 
-Aula 34 - Listando todas as categorias com DTO:
+Aula 34. - Listando todas as categorias com DTO:
 
 	* Criar um End-point que retorna todas as categorias.
 
@@ -351,7 +351,17 @@ Aula 34 - Listando todas as categorias com DTO:
 	* Para converter uma lista de Categoria em uma lista de CategoriaDTO, utilizar o método do Java 8 stream.map() em conjunto
 	com uma arrow function ( -> ).
 
+Atualizar PageRequest pageRequest = PageRequest.of().
 
+Aula 35. - Paginação com parâmetros opcionais na requisição:
+
+	* A paginação é necessária para controlar a quantidade de registros, que ficam disponíveis para o usuário do sistema. Com
+	objetivo de não deteriorar a performace deste.
+
+	* Usar a classe Page() do Spring boot, encapsula a paginação.
+
+	* Passar parâmetros pela Url http://localhost:8080/categorias/page?linesPerPage=3&page=1.
+	
 
 
 
