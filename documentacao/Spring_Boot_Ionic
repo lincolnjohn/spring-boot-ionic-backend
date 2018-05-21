@@ -362,6 +362,32 @@ Aula 35. - Paginação com parâmetros opcionais na requisição:
 
 	* Passar parâmetros pela Url http://localhost:8080/categorias/page?linesPerPage=3&page=1.
 	
+-------------------------------------->>> 21/05/2018  
+
+Aula 36. - Validação sintática com Bean Validation:
+
+Atualizar utilizar a classe import javax.validation.contraints.NotEmpty, no lugar da classe do Hibernate.
+
+	* Validação sem acesso a dados:
+
+		- Sintáticas: Campo nã pode ser vazio, Valor numérico mínimo ou máximo, Comprimento de String mínimo ou máximo etc.
+
+		- Data futura ou passada.
+
+	* Validação com acesso a dados:
+
+		- Campo não pode ser repetido.
+
+		- Cada usuário pode cadastrar no máximo 3 valore.
+
+	* O framework Spring ja faz a validação na camada de controladores REST.
+
+	* Se for necessário uma validação customizada vamos fazer na camada de Serviço.
+
+	* Vamos usar os DTOs para validação básica. Usando Bean validation javax.validation e Hibernate validator org.hibernate.validator.
+
+	
+
 
 
 
