@@ -386,7 +386,9 @@ Atualizar utilizar a classe import javax.validation.contraints.NotEmpty, no luga
 
 	* Vamos usar os DTOs para validação básica. Usando Bean validation javax.validation e Hibernate validator org.hibernate.validator.
 
-	
+Aula 37. - Personalizando o retorno da validação:
+
+	* 	
 
 
 
