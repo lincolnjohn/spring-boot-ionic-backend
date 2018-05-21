@@ -388,7 +388,7 @@ Atualizar utilizar a classe import javax.validation.contraints.NotEmpty, no luga
 
 Aula 37. - Personalizando o retorno da validação:
 
-	* 	
+	* Criar classes de validação para capturar a execessão e personalizar o retorno da validação.	
 
 
 
