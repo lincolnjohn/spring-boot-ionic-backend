@@ -1,4 +1,4 @@
-﻿-------------------------------------->>> 01/05/2018
+-------------------------------------->>> 01/05/2018
 
 Curso Spring Boot, Hibernate, REST, Ionic - Udemy
 
@@ -341,7 +341,7 @@ Aula 33. Deletando uma Categoria com DELETE:
 
 -------------------------------------->>> 17/05/2018  
 
-Aula 34. - Listando todas as categorias com DTO:
+Aula 34. Listando todas as categorias com DTO:
 
 	* Criar um End-point que retorna todas as categorias.
 
@@ -353,7 +353,7 @@ Aula 34. - Listando todas as categorias com DTO:
 
 Atualizar PageRequest pageRequest = PageRequest.of().
 
-Aula 35. - Paginação com parâmetros opcionais na requisição:
+Aula 35. Paginação com parâmetros opcionais na requisição:
 
 	* A paginação é necessária para controlar a quantidade de registros, que ficam disponíveis para o usuário do sistema. Com
 	objetivo de não deteriorar a performace deste.
@@ -364,7 +364,7 @@ Aula 35. - Paginação com parâmetros opcionais na requisição:
 	
 -------------------------------------->>> 21/05/2018  
 
-Aula 36. - Validação sintática com Bean Validation:
+Aula 36. Validação sintática com Bean Validation:
 
 Atualizar utilizar a classe import javax.validation.contraints.NotEmpty, no lugar da classe do Hibernate.
 
@@ -386,12 +386,21 @@ Atualizar utilizar a classe import javax.validation.contraints.NotEmpty, no luga
 
 	* Vamos usar os DTOs para validação básica. Usando Bean validation javax.validation e Hibernate validator org.hibernate.validator.
 
-Aula 37. - Personalizando o retorno da validação:
+Aula 37. Personalizando o retorno da validação:
 
 	* Criar classes de validação para capturar a execessão e personalizar o retorno da validação.	
 
+-------------------------------------->>> 01/06/2018  
 
+Aula 38. PUT, DELETE e GET para Cliente:
 
+	* Atualizações para Spring Boot 2.0:
+		- import javax.validation.constraints.Email e import javax.validation.constraints.NotEmpty.
+	* Instanciar um Cliente apartir de um ClienteDTO.
+	* Estabelecer uma regra no sistema que não poder deletar cliente que tenha pedido.
+	
+	* >>>>>>>>>>Parou 14:52
+		
 
 
 
