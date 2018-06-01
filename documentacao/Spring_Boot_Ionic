@@ -398,8 +398,8 @@ Aula 38. PUT, DELETE e GET para Cliente:
 		- import javax.validation.constraints.Email e import javax.validation.constraints.NotEmpty.
 	* Instanciar um Cliente apartir de um ClienteDTO.
 	* Estabelecer uma regra no sistema que não poder deletar cliente que tenha pedido.
-	
-	* >>>>>>>>>>Parou 14:52
+
+Aula 39. Correções update Categoria Service e construtor de Pagamento.	
 		
 
 
