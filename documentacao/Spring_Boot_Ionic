@@ -1,4 +1,4 @@
--------------------------------------->>> 01/05/2018
+﻿----------------------------------->>> 01/05/2018
 
 Curso Spring Boot, Hibernate, REST, Ionic - Udemy
 
@@ -401,6 +401,35 @@ Aula 38. PUT, DELETE e GET para Cliente:
 
 Aula 39. Correções update Categoria Service e construtor de Pagamento.	
 		
+-------------------------------------->>> 05/06/2018 
 
+Aula 40. Inserindo um novo Cliente com POST:
+	
+	* Atualização para o Spring Boot 2.0:
+		- Usar @Transactional no método insert:
+			@Transactional
+			public Cliente insert(Cliente obj) {
+		
+		- Não é necessário usar cidadeRepository no método fromDTO:
+			Cidade cid = new Cidade(objDto.getCidadeId(), null, null);
+
+	* O cliente tem que ter pelo menos um telefone e endereço de uma cidade.
+
+	* Criar um DTO especifico para está situação.
+
+	* Exemplo de cliente via Postman:
+	{
+		"nome":"Mulher Maravilha",
+		"email":"mulhar@yahoo.br",
+		"cpfOuCnpj":"2323232323",
+		"tipo":1,
+		"telefone1":"9999444",
+		"telefone2":"66778888",
+		"logradouro":"rua das amazonas",
+		"numero":"2000",
+		"complemento":"prox.vulcao",
+		"cep":"55667777",
+		"cidadeId":2
+	}
 
 
