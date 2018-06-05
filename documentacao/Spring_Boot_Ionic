@@ -441,7 +441,12 @@ Aula 41. Ajustando e testando a deleção de Cliente:
 	* O JPA permite fazer uma operação que quando se tem um relacionamento um para muitos, de maneira ao realizar
 	uma operação na entidade se reflita em outra que está relacionada. Utilizando o parâmetro "cascade=CascadeType.ALL".
 
+Aula 42. Validação customizada de CPF ou CNPJ;
 
+	* Criar uma anotação customizada da classe.
+
+	* As classes de validação fazem parte da camada de serviços.
+	
 
 
 
