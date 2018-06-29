@@ -447,13 +447,18 @@ Aula 42. Validação customizada de CPF ou CNPJ;
 
 	* As classes de validação fazem parte da camada de serviços.
 
-Aula 43. Validação customizada de email não repetido:
+Aula 43. Validação customizada de email não repetido na inserção do Cliente:
 
 	* O JPA permite identificar um campo que deve ter um valor não repetido no banco de dados. Usando anotação 
 	"@Column(unique=true)" gerando uma excessão violação de integridade.
 
 	* Anotação "@Transactional(readOnly=true)", identifica uma transação somente de leitura.
 
+-------------------------------------->>> 29/06/2018 
 
+Aula 44. Validação customizada de email não repetido na atualização do Cliente:
+
+	* Utilizar uma estrutura de dados Map, uma coleção de chave e valor.
+	 
 
 
