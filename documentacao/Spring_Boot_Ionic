@@ -459,6 +459,32 @@ Aula 43. Validação customizada de email não repetido na inserção do Cliente
 Aula 44. Validação customizada de email não repetido na atualização do Cliente:
 
 	* Utilizar uma estrutura de dados Map, uma coleção de chave e valor.
-	 
+
+	* Implementar a regra que permite se o mesmo email caso seja uma atualização do mesmo Cliente.
+
+
+Aula 45. Apresentando o Caso de uso:
+
+	* O caso de uso é uma descrição funcional da interação do usuário com o sistema. 
+
+	* O usuário é chamado de ator, porque está desempenhando um papel no sistema.
+
+	* O caso descreve a troca de informação entre o cliente e o sistema.
+
+
+Nivelamento: SQL e JPQL:
+
+	* JPQL é a lunguagem de consuta da JPA.
+
+	* A JPQL é similar a SQL porém as consultas são expressas em nível de objetos.
+
+	* Comparação: 	SQL -> select * from cliente (retorna um resultset com os dados da tabela cliente)
+					JPQL -> select obj from Cliente obj (retorna um List<Cliente>)
+
+	* 
+
+parou aula 47
+
+
 
 
