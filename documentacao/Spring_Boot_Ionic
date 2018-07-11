@@ -509,7 +509,30 @@ Aula 48. Busca de pedidos por nome e categorias - Parte 2:
 
 Aula 49. Subtotal e total do Pedido:
 	
-	* 
+	* Incluir operações na classe de dominio.
+
+Aula 50. Inserindo Pedido:
+
+	* Atualização para o Spring Boot 2:
+
+		- Usar anotação "@Transactional" no metodo de insert() na classe PedidoService.
+
+		- Na classe PedidoServie, usar ProdutoService ao invés de ProdutoRepository, quando na busca pelo preço do Produto.
+
+	* No Pagamento de um Pedido é necessário implementar a classe Pagamento por ela ser abstrata, implementando um dos tipos de pagamento.
+
+	* No projeto é utilizado a biblioteca Jackson responsável em serializar e deserializar objetos Json.
+
+	* Criação de uma classe de configuração, que vai ser instanciada na inicialização do sistema.
+
+	* Informação sobre configuração do Jackson:
+		// https://stackoverflow.com/questions/41452598/overcome-can-not-construct-instance-ofinterfaceclass-without-hinting-the-pare
+
+	* Para inserir um Pedido não vou utilizar um PedidoDTO, pois teria que criar associações entre vários DTO's.
+
+
+
+
 
 
 
