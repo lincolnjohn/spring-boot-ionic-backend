@@ -472,7 +472,7 @@ Aula 45. Apresentando o Caso de uso:
 	* O caso descreve a troca de informação entre o cliente e o sistema.
 
 
-Nivelamento: SQL e JPQL:
+Aula 46. Nivelamento: SQL e JPQL:
 
 	* JPQL é a lunguagem de consuta da JPA.
 
@@ -484,6 +484,36 @@ Nivelamento: SQL e JPQL:
 	* 
 
 parou aula 47
+
+-------------------------------------->>> 11/07/2018 
+
+Aula 47. Busca de pedidos por nome e categorias - Parte 1:
+
+	* Atualização para o Spring 2 usar "findAllById(ids)".
+
+	* O método "search()" na classe ProdutoService é uma busca paginada.
+
+	* Na documentação do Spring JPA, encontra-se a relação de métodos que podem ser utilizados para criar consultas JPQL.
+
+	* Com anotação @Qeury você cria a consulta JPQL(se baseia no nome da classe) dentro da própria interface.
+
+Aula 48. Busca de pedidos por nome e categorias - Parte 2:
+
+	* O processo de encodeURIComponent("TV LED") => "TV%LED".
+
+	* Posso substituir a sentença JPQL:
+		"SELECT DISTINCT obj FROM Produto obj INNER JOIN obj.categorias cat WHERE obj.nome LIKE %:nome% AND cat IN :categorias"
+		
+		- Por um método usando nomes utilizados pelo JPQL:
+			findDistinctByNomeContainingAndCategoriasIn	
+
+
+
+
+
+
+
+
 
 
 
