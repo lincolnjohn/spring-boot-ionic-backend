@@ -530,6 +530,17 @@ Aula 50. Inserindo Pedido:
 
 	* Para inserir um Pedido não vou utilizar um PedidoDTO, pois teria que criar associações entre vários DTO's.
 
+Aula 51. Material de Apoio:
+
+Aula 52. Instalando MySql:
+
+	* Sugestão para utilizar XAMP. O meu PC já tem o MySql instalado.
+
+Aula 53. Criando o profile de teste:
+
+	* O profile serve para definir propriedades que serão executadas pelo sistema de acordo com ambiente teste, desenvolvimento e produçaõ.
+
+
 
 
 
