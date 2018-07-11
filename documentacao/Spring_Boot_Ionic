@@ -507,7 +507,9 @@ Aula 48. Busca de pedidos por nome e categorias - Parte 2:
 		- Por um método usando nomes utilizados pelo JPQL:
 			findDistinctByNomeContainingAndCategoriasIn	
 
-
+Aula 49. Subtotal e total do Pedido:
+	
+	* 
 
 
 
