@@ -545,6 +545,60 @@ Aula 53. Criando o profile de teste:
 Aula 54. Criando o profile de desenvolvimento:
 
 	* Utilizar o MySql e criar a base de dados curso_spring.
+
+	* Não utilizei o LAMP, que instala o Apache e MySql.
+
+Aula 55. Instalando e preparando o Heroku:
+
+	* Heroku plataforma utiliza para publicar o Back-end na nuvem.
+
+	* Já possuo uma conta no Heroku:
+		
+		- https://dashboard.heroku.com/login 		
+				
+		- login:lincolnjohn@gmail.com senha:saturno1964
+
+		- Criar um app: app-spring-ionic-lj onde vamos colocar o Back-end.
+
+		- Seguir o instruções do material de apoio.
+
+	* Instalar o cliente do Heroku:
+
+		- https://devcenter.heroku.com/articles/heroku-cli#download-and-install.
+
+		- sudo snap install heroku --classic.
+	
+		- logar no Heroku $>heroku login.
+
+Aula 56. Dump da base de dados para o Heroku:
+
+	* $> mysqldump -u root -p curso_spring > arquivo.sql.
+
+	* Executar o script gerado no arquivo.sql no heroku.
+
+	* Associar o repositório local com o Heroku:
+
+		- Dentro da pasta do projeto digitar heroku git:remote -a app-spring-ionic-lj.
+
+		- O comando git remote -v mostra os locais remotos que o projeto está associado:
+			heroku	https://git.heroku.com/app-spring-ionic-lj.git (fetch)
+			heroku	https://git.heroku.com/app-spring-ionic-lj.git (push)
+			origin	https://github.com/lincolnjohn/spring-boot-ionic-backend.git (fetch)
+			origin	https://github.com/lincolnjohn/spring-boot-ionic-backend.git (push)
+
+	* Obter a URL do banco de dados no heroku:
+
+		- heroku config | grep CLEARDB_DATABASE_URL:
+
+		- mysql://b2932e70c17883(usuario):c1f75384(senha)@us-cdbr-iron-east-04.cleardb.net(host=)/heroku_b91804a51bf0420(host)?reconnect=true
+		
+	  	- $> mysql --host=us-cdbr-iron-east-04.cleardb.net --user=b2932e70c17883 --password=c1f75384 --reconnect heroku_b91804a51bf0420 < arquivo.sql	
+
+Aula 57. Configuração e envio do projeto para produção:
+
+	* Fazer o commit para o github e heroku.
+
+
 	
 
 
