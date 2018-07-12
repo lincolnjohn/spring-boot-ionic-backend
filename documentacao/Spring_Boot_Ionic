@@ -540,9 +540,12 @@ Aula 53. Criando o profile de teste:
 
 	* O profile serve para definir propriedades que serão executadas pelo sistema de acordo com ambiente teste, desenvolvimento e produçaõ.
 
+-------------------------------------->>> 12/07/2018 
 
+Aula 54. Criando o profile de desenvolvimento:
 
-
+	* Utilizar o MySql e criar a base de dados curso_spring.
+	
 
 
 
