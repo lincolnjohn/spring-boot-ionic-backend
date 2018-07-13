@@ -596,11 +596,25 @@ Aula 56. Dump da base de dados para o Heroku:
 
 Aula 57. Configuração e envio do projeto para produção:
 
+	* Criar o profile de produção do heroku.
+
+	* Criar o arquivo Procfile que faz a comunicação entre o aplicativo e o heroku.
+
 	* Fazer o commit para o github e heroku.
 
+	* Url gerada pelo heroku https://app-spring-ionic-lj.herokuapp.com/pedidos/1
 
+-------------------------------------->>> 13/07/2018 
 	
+Aula 58. Material de apoio:
 
+Aula 59. Implementando toString de Pedido:
+
+	* Atualização:
+		
+		- Na classe PedidoService, usar ClienteService ao invés de ClienteRepository.
+
+	* Na geração do toString na opção "Code Style" selecionar o "StringBuilder/StringBuffer" que tem um desempenho otimizado.
 
 
 
