@@ -616,6 +616,12 @@ Aula 59. Implementando toString de Pedido:
 
 	* Na geração do toString na opção "Code Style" selecionar o "StringBuilder/StringBuffer" que tem um desempenho otimizado.
 
+Aula 60. MockEmailService com Logger (Padrões Strategy e Template Method):
+
+	* Usar plimorfismo com o padrão Strategy para criar uma interface EmailService.
+
+	* A classe MockEmailService simula o envio de email utilizando a classe org.slf4j.Logger.
+
 
 
 
