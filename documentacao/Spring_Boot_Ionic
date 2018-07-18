@@ -636,6 +636,29 @@ Aula 61. Implementando SmtpEmailService com servidor Google:
 	o pedido.
 	- Antes de fazer o commit retirar os dados do email, para não ficar publico. 
 
+Aula 62. Atualização - outro link para liberar acesso ao Gmail:
+	
+	* Atualização:
+
+		- Depois de um tempo atualização do gmail que permite receber email via aplicativo, perde a
+		validade e novamente bloqueia.
+
+		- Pode ser usado um dos links a seguir:
+			https://www.google.com/settings/security/lesssecureapps
+			https://accounts.google.com/b/0/DisplayUnlockCaptcha (executar pelo heroku)
+
+Aula 63. Email Html:
+
+	* O conteúdo desta aula é uma atualização feita após o curso encerrado, sendo necessário criar um
+	branch no git-hub (ramificação do original), evitando alterar a sequência já existente:
+
+		- Para criar o branch no git: git checkout -b 'email-html'.
+
+	* Utilizar a biblioteca de template do Spring Thymeleaf.
+
+	* Implementar o email para enviar no formato Html.
+
+
 
 
 
