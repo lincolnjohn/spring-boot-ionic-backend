@@ -623,7 +623,18 @@ Aula 60. MockEmailService com Logger (Padrões Strategy e Template Method):
 	* A classe MockEmailService simula o envio de email utilizando a classe org.slf4j.Logger.
 
 
+-------------------------------------->>> 18/07/2018 
 
+Aula 61. Implementando SmtpEmailService com servidor Google:
+
+	* Atualização:
+
+		- As configuração do material de apoio devem ser colocadas no profile dev e prod, se quiser
+		no profile de test deve colocar estas configuração neste.
+
+	- Para testarmos o email colocar o meu email do google no DBService quando inserir o cliente que fez 
+	o pedido.
+	- Antes de fazer o commit retirar os dados do email, para não ficar publico. 
 
 
 
