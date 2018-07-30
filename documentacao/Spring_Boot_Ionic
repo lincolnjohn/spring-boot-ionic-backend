@@ -661,6 +661,32 @@ Aula 63. Email Html:
 	* Implementar o email para enviar no formato Html.
 
 
+-------------------------------------->>> 30/07/2018 
+
+Aula 64. Autenticação e Autorização com Tokens JWT:
+
+	* Material de Apoio.
+
+Aula 65. Configuração do Spring Security:
+
+	* JWT Json web tokens.
+
+	* Incluir as dependências do Spring Security e JWT no pom.xml.
+
+	* Somente incluindo as depedências do Spring Security já bloqueia o acesso aos end points.
+
+	* Criar uma classe responsável pelas configurações do Spring Security.
+
+	* Identificar na classe de configuração quais end points estão liberados para acesso.
+
+	* Implementar métodos que permitem ou bloqueiem o acesso.
+
+	* Desabilita a configuração para um tipo de ataque csrf, porque o sistema não vai manter o estado da sessão(stateless).
+
+	* Incluir uma configuração para acesso ao console do h2.
+
+	* Incluir end points somente para leitura (get). 
+
 
 
 
