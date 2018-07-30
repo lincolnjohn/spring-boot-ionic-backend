@@ -78,6 +78,8 @@ Curso Spring Boot, Hibernate, REST, Ionic - Udemy
 				* $>git push -u origin master (envio do repositorio local para o github-repositorio web).
 				* Solicita usuario:lincolnjohn e senha:marte1964.
 				* No github o projeto já fica salvo, onde se visualiza o commit realizado.
+				* Para copiar do git para a pasta local utilizar: 
+					- git clone https://github.com/lincolnjohn/spring-boot-web-devmedia.git(url do projeto).
 
 	>>> Parou
 
