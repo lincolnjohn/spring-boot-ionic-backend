@@ -20,6 +20,7 @@ import br.thot.cursomc.domain.PagamentoComCartao;
 import br.thot.cursomc.domain.Pedido;
 import br.thot.cursomc.domain.Produto;
 import br.thot.cursomc.domain.enums.EstadoPagamento;
+import br.thot.cursomc.domain.enums.Perfil;
 import br.thot.cursomc.domain.enums.TipoCliente;
 import br.thot.cursomc.repositories.CategoriaRepository;
 import br.thot.cursomc.repositories.CidadeRepository;
@@ -132,16 +133,24 @@ public class DBService {
 		cidadeRepository.saveAll(Arrays.asList(cid1,cid2,cid3,cid4));
 		
 		Cliente cli1 = new Cliente(null, "Incrivel Hulk", "lincolnjohn@gmail.com", "1223334343", TipoCliente.PESSOAFISICA, pe.encode("123456"));
-		 
+		
 		cli1.getTelefones().addAll(Arrays.asList("234454555","5544666"));
+		
+		Cliente cli2 = new Cliente(null, "Homem Aranha", "lincolnjohnbr@yahoo.com.br", "1223334343", TipoCliente.PESSOAFISICA, pe.encode("123456"));
+		cli2.getTelefones().addAll(Arrays.asList("234454555","5544666"));
+		cli2.addPerfil(Perfil.ADMIN);
+		 
+		
 		
 		Endereco end1 = new Endereco(null, "Rua verde forte", "344", "perto do beco", "Vingadores", "665544", cli1, cid2);
 		Endereco end2 = new Endereco(null, "Avenida Verde gama", "444", "próximo posto", "Radiação Gama", "55666", cli1, cid1);
+		Endereco end3 = new Endereco(null, "Avenida Arco Verde", "4444", "próximo posto", "Gama", "55666", cli2, cid2);
 		
 		cli1.getEnderecos().addAll(Arrays.asList(end1,end2));
+		cli2.getEnderecos().addAll(Arrays.asList(end3));
 		
-		clienteRepository.saveAll(Arrays.asList(cli1));
-		enderecoRepository.saveAll(Arrays.asList(end1,end2));
+		clienteRepository.saveAll(Arrays.asList(cli1,cli2));
+		enderecoRepository.saveAll(Arrays.asList(end1,end2,end3));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		

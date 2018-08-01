@@ -694,6 +694,12 @@ Aula 66. Adicionando senha a Cliente:
 	* Aplicar algoritimo de encode para encriptar a senha, utilizar BCryptPasswordEncoder componente do framework 
 	Spring Security.
 
+Aula 67. Salvando perfis de usuário na base de dados:
+
+	* O Spring Security por padrão adota nos perfis "ROLE_+(setor do usuário)".	
+	* Incluir outro cliente para testar rest com o perfil.
+	
+
 
 
 
