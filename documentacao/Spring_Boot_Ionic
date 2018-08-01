@@ -14,7 +14,7 @@ Curso Spring Boot, Hibernate, REST, Ionic - Udemy
 
 	Aula 6. Instalaçao das ferramentas:
 
-		* Git - Conta no Github user:lincolnjohn@gmail.com password:marte1964
+		* Criando conta GitHub
 
 		* Google Chrome e Postman (Rest Client - utilizar extensao RESTClient no FireFox)
 
@@ -686,6 +686,13 @@ Aula 65. Configuração do Spring Security:
 	* Incluir uma configuração para acesso ao console do h2.
 
 	* Incluir end points somente para leitura (get). 
+
+-------------------------------------->>> 01/08/2018 
+
+Aula 66. Adicionando senha a Cliente:
+
+	* Aplicar algoritimo de encode para encriptar a senha, utilizar BCryptPasswordEncoder componente do framework 
+	Spring Security.
 
 
 
