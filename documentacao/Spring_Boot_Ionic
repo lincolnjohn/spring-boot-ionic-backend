@@ -697,12 +697,55 @@ Aula 66. Adicionando senha a Cliente:
 Aula 67. Salvando perfis de usuário na base de dados:
 
 	* O Spring Security por padrão adota nos perfis "ROLE_+(setor do usuário)".	
+
 	* Incluir outro cliente para testar rest com o perfil.
 	
+[----------------------------------------------------------------------------------------------- (06/08/2018)]
 
+Aula 68. Implementação autenticação e geração do token JWT (parte1):
 
+	* Atualização:
 
+		- Na classe JWTAuthenticationfilter, acrescentar uma implementação de AuthenticationFailureHandler e injetar
+		em JWTAuthenticationfilter:
 
+		    public JWTAuthenticationFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil) {
+		    	setAuthenticationFailureHandler(new JWTAuthenticationFailureHandler());
+		        this.authenticationManager = authenticationManager;
+		        this.jwtUtil = jwtUtil;
+		    }
 
+			private class JWTAuthenticationFailureHandler implements AuthenticationFailureHandler {
+		 
+		        @Override
+		        public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
+		                throws IOException, ServletException {
+		            response.setStatus(401);
+		            response.setContentType("application/json"); 
+		            response.getWriter().append(json());
+		        }
+		        
+		        private String json() {
+		            long date = new Date().getTime();
+		            return "{\"timestamp\": " + date + ", "
+		                + "\"status\": 401, "
+		                + "\"error\": \"Não autorizado\", "
+		                + "\"message\": \"Email ou senha inválidos\", "
+		                + "\"path\": \"/login\"}";
+		        }
+		    }
 
+	* Autenticação significa quem a pessoa é. O sistema verifica se seu usário e senha estão corretos.
+
+	* Autorização verifica se o usuário pode acessar determinado recurso.
+
+	* Para gerar um token é chamado um método da biblioteca JWT.
+
+[----------------------------------------------------------------------------------------------- (08/08/2018)]
+
+Aula 69. Implementação autenticação e geração do token JWT (parte1):
+
+	* Um filtro de autenticação intercepta a requisição e executa um procedimento.
+	* Receber login e senha via Post (requisição http).
+	* Acescentar o token da resposta como cabeçalho da requisição.
 
