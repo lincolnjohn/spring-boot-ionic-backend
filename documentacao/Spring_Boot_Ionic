@@ -743,9 +743,14 @@ Aula 68. Implementação autenticação e geração do token JWT (parte1):
 
 [----------------------------------------------------------------------------------------------- (08/08/2018)]
 
-Aula 69. Implementação autenticação e geração do token JWT (parte1):
+Aula 69. Implementação autenticação e geração do token JWT (parte2):
 
 	* Um filtro de autenticação intercepta a requisição e executa um procedimento.
 	* Receber login e senha via Post (requisição http).
-	* Acescentar o token da resposta como cabeçalho da requisição.
+	* Acrescentar o token da resposta como cabeçalho da requisição.
 
+[----------------------------------------------------------------------------------------------- (09/08/2018)]
+
+Aula 70. Implementando autorização:
+
+	* 
