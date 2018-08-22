@@ -762,6 +762,13 @@ Aula 70. Implementando autorização:
 
 	* O tipo Claims é utilizado quando temos um token revindicando algo.
 
+Aula 71. Autorizando endpoints para perfis específicos:
+
+	* Incluir notação para autorizar pertis específicos.
+
+	* De acordo com a regra de negócio, inserir anotação @PreAuthorize para um determinado perfil. No exemplo vamos incluir
+	no endpoint "POST","PUT" e "DELETE" nos métodos inserir, atualizar e deletar Categoria.	
+
 
 
 
