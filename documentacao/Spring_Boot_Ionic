@@ -753,4 +753,16 @@ Aula 69. Implementação autenticação e geração do token JWT (parte2):
 
 Aula 70. Implementando autorização:
 
-	* 
+	* Autenticação verifica que o usuário é realmente ele, na Autorização identifica que partes do sistema você tem acesso.
+
+	* O processo de Autenticação gera um token, que depois deve ser repasado via header como uma chave "Authorization" e o valor
+	do token, dentro do método Http para acessa o endpoint.
+
+	* No sistema criar um filtro de autorização.
+
+	* O tipo Claims é utilizado quando temos um token revindicando algo.
+
+
+
+
+
