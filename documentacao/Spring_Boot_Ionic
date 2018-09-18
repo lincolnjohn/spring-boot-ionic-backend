@@ -774,6 +774,16 @@ Aula 71. Autorizando endpoints para perfis específicos:
 Aula 72. Restrição de conteúdo - o cliente so recupera ele mesmo:
 
 	* Criar uma classe UserService que retorna o usuário logado.
-	
+
+
+Aula 73. Restrição de conteúdo - o cliente só recupera seus pedidos:
+
+	* Atualização para o SpringBoot 2.0 : Na classe PedidoService no método findPage() na instânciação do PageRequest pageRequest = 
+	PageRequest.of(....). Na hora de buscar o cliente Cliente cliente = clienteService.find(.....) .
+
+	* Reaproveitar de CategoriaResource o método que faz uma busca paginada.
+
+
+
 
 
