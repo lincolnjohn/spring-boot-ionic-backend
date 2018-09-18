@@ -783,7 +783,10 @@ Aula 73. Restrição de conteúdo - o cliente só recupera seus pedidos:
 
 	* Reaproveitar de CategoriaResource o método que faz uma busca paginada.
 
+Aula 74. Refresh token:
 
+	* Um EndPoint com Refresh token renova o token e registra um novo token.
+	
 
 
 
