@@ -769,7 +769,11 @@ Aula 71. Autorizando endpoints para perfis específicos:
 	* De acordo com a regra de negócio, inserir anotação @PreAuthorize para um determinado perfil. No exemplo vamos incluir
 	no endpoint "POST","PUT" e "DELETE" nos métodos inserir, atualizar e deletar Categoria.	
 
+|----------------------------------------------------------------------------------------------> (18/09/2018)
 
+Aula 72. Restrição de conteúdo - o cliente so recupera ele mesmo:
 
+	* Criar uma classe UserService que retorna o usuário logado.
+	
 
 

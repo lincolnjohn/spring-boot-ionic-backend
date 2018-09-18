@@ -95,6 +95,11 @@ public class UserSS implements UserDetails{
 	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
 		this.authorities = authorities;
 	}
+
+	public boolean hasRole(Perfil perfil) {
+
+		return getAuthorities().contains(new SimpleGrantedAuthority(perfil.getDescricao())) ;
+	}
 	
 	
 
