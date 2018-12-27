@@ -788,5 +788,13 @@ Aula 74. Refresh token:
 	* Um EndPoint com Refresh token renova o token e registra um novo token.
 	
 
+|----------------------------------------------------------------------------------------------> [27/12/2018]
 
+Aula 75. Esqueci a senha:
 
+	* O método "sendNewPassword" precisa verificar se o email existe.
+
+	* Criar um método para gerar números, letras maiusculas e minusculas de forma aleatório para compor a nova senha
+	do usuário.
+
+	* Criar EmailDTO para informações sobre o email que o cliente informar.
